@@ -41,15 +41,29 @@ async function main() {
   // console.log(update);
   //update manay data
 
-  const updatemany = await prisma.user.updateMany({
+  // const updatemany = await prisma.user.updateMany({
+  //   where: {
+  //     id: {
+  //       gt: 2,
+  //     },
+  //   },
+  //   data: {
+  //     profilePhoto: "https://thisisprofile.png",
+  //   },
+  // });
+  // console.log(updatemany);
+
+  const updateAndRetrun = await prisma.user.updateManyAndReturn({
     where: {
-      profilePhoto: null,
+      id: {
+        gte: 2,
+      },
     },
     data: {
       profilePhoto: "https://thisisprofile.png",
     },
   });
-  console.log(updatemany);
+  console.log(updateAndRetrun);
 }
 
 main();
