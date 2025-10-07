@@ -14,6 +14,7 @@ async function main() {
   // console.log(result);
   // find add data fromtable
   // const userdata = await prisma.user.findMany();
+  // console.log(userdata);
   //find data using id
   // const userdata = await prisma.user.findMany({
   //   where: {
@@ -27,17 +28,28 @@ async function main() {
   //   },
   // });
   // console.log(findUser);
+  //update
+  // const update = await prisma.user.update({
+  //   where: {
+  //     id: 1,
+  //   },
+  //   data: {
+  //     name: "mejba",
+  //     email: "mejaba@gmail.com",
+  //   },
+  // });
+  // console.log(update);
+  //update manay data
 
-  const update = await prisma.user.update({
+  const updatemany = await prisma.user.updateMany({
     where: {
-      id: 1,
+      profilePhoto: null,
     },
     data: {
-      name: "mejba",
-      email: "mejaba@gmail.com",
+      profilePhoto: "https://thisisprofile.png",
     },
   });
-  console.log(update);
+  console.log(updatemany);
 }
 
 main();
