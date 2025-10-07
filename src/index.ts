@@ -40,7 +40,6 @@ async function main() {
   // });
   // console.log(update);
   //update manay data
-
   // const updatemany = await prisma.user.updateMany({
   //   where: {
   //     id: {
@@ -52,18 +51,25 @@ async function main() {
   //   },
   // });
   // console.log(updatemany);
-
-  const updateAndRetrun = await prisma.user.updateManyAndReturn({
+  //updatemanyAnd retrun
+  // const updateAndRetrun = await prisma.user.updateManyAndReturn({
+  //   where: {
+  //     id: {
+  //       gte: 2,
+  //     },
+  //   },
+  //   data: {
+  //     profilePhoto: "https://thisisprofile.png",
+  //   },
+  // });
+  // console.log(updateAndRetrun);
+  //delete data
+  const deleteData = await prisma.user.delete({
     where: {
-      id: {
-        gte: 2,
-      },
-    },
-    data: {
-      profilePhoto: "https://thisisprofile.png",
+      id: 2,
     },
   });
-  console.log(updateAndRetrun);
+  console.log(deleteData);
 }
 
 main();
